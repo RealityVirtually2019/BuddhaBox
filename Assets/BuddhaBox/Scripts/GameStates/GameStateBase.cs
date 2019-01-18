@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class GameStateBase : MonoBehaviour
 {
+    protected GameManager gm;
 
     public bool hasFocus = false;
+
+    public void Awake()
+    {
+        gm = GameManager.instance;
+    }
 
     public virtual void GainFocus()
     {

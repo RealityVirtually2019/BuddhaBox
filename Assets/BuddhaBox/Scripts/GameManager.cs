@@ -7,16 +7,28 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public ModuleManager modules;
 
-    public StateWaiting waiting;
+    public Settings settings;
+
     public StateIntroduction introduction;
+    public StatePlaying playing;
+    public StateFinishing finishing;
 
     public GameStateBase currentState;
+
+    [HideInInspector]
+    public Player player;
 
     public void Awake()
     {
         GameManager.instance = this;
-        currentState = waiting;
-        waiting.GainFocus();
+      
+    }
+
+    public void Start()
+    {
+        player = modules.Get<Player>();
+        currentState = introduction;
+        currentState.GainFocus();
     }
 
     public void SetCurrentState(GameStateBase newState)
