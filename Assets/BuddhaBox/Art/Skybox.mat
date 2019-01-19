@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skybox
+  m_Name: Skybox - Copy
   m_Shader: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _SUNDISK_HIGH_QUALITY
   m_LightmapFlags: 4
@@ -80,5 +80,5 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GroundColor: {r: 0.9992127, g: 0.82982373, b: 0.0006777146, a: 0.00003340877}
-    - _SkyTint: {r: 0.9992127, g: 0.82982373, b: 0.0006777146, a: 0.00003340877}
+    - _GroundColor: {r: 0.86257964, g: 0.117994405, b: 0.117994405, a: 0.0061582327}
+    - _SkyTint: {r: 0.86257964, g: 0.117994405, b: 0.117994405, a: 0.0061582327}

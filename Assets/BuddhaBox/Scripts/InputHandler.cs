@@ -6,6 +6,8 @@ public class InputHandler : ModuleBase
 {
     bool startSignaled = false;
 
+  //  public enum STATES 
+
     public bool StartSignaled()
     {
         return startSignaled;
