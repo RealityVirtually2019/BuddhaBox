@@ -9,7 +9,7 @@ public class Narrator : ModuleBase
 
     public void Play(int number)
     {
-        audiosource.clip = clips[number];
+        audiosource.clip = clips[number - 1];
         audiosource.Play();
     }
 }
