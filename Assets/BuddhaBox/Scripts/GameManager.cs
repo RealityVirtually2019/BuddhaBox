@@ -10,8 +10,11 @@ public class GameManager : MonoBehaviour
     public Settings settings;
 
     public StateIntroduction introduction;
-    public StatePlaying playing;
     public StateFinishing finishing;
+
+    public StateIntensity1 intenstity1;
+    public StateIntensity2 intenstity2;
+    public StateIntensity3 intenstity3;
 
     public GameStateBase currentState;
 

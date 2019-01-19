@@ -28,7 +28,7 @@ public class StateIntroduction : GameStateBase
             yield return new WaitForEndOfFrame();
         }
         text.gameObject.SetActive(false);
-        gm.SetCurrentState(gm.playing);
+        gm.SetCurrentState(gm.intenstity1);
     }
 
 }

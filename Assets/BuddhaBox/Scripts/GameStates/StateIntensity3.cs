@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : ModuleBase {
-    public Camera cam;
+public class StateIntensity3 : StateIntensityBase
+{
+
 }
