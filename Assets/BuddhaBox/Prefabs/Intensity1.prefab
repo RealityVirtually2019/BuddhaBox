@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasFocus: 0
+  hasNarration: 0
+  narrationID: 0
   clouds: {fileID: 0}
   skyColor: {r: 0.8679245, g: 0.118725546, b: 0.118725546, a: 0}
   nextState: {fileID: 0}
@@ -65,7 +67,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
