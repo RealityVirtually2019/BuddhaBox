@@ -15,8 +15,8 @@ public class StateIntensityBase : GameStateBase
     public override void GainFocus()
     {
         base.GainFocus();
-
-        StartCoroutine(IntensityRoutine());
+        GameManager.instance.modules.Get<Sky>().ChangeColor(skyColor);
+       // StartCoroutine(IntensityRoutine());
     }
     
     IEnumerator IntensityRoutine()

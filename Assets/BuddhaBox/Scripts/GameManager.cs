@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
         }
         currentState = newState;
         currentState.GainFocus();
+        Debug.Log("Change current state to " + currentState);
     }
 
     public void Update()

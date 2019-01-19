@@ -4,17 +4,38 @@ using UnityEngine;
 
 public class InputHandler : ModuleBase
 {
-    bool startSignaled = false;
+    GameManager gm;
 
-    public bool StartSignaled()
+    private void Start()
     {
-        return startSignaled;
+         gm = GameManager.instance;
     }
 
+
+    private int CheckBreathingRate()
+    {
+        return 0;
+    }
+    
     public override void DoUpdate()
     {
-        startSignaled = Input.GetKeyDown(KeyCode.Space);
-      
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            gm.SetCurrentState(gm.introduction);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+           gm.SetCurrentState(gm.intenstity1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            gm.SetCurrentState(gm.intenstity2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            gm.SetCurrentState(gm.intenstity3);
+        }
+
         base.DoUpdate();
     }
 }

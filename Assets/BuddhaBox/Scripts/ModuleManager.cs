@@ -8,7 +8,7 @@ public class ModuleManager : MonoBehaviour
     public ModuleBase[] modules;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         modules = GetComponentsInChildren<ModuleBase>();
     }
