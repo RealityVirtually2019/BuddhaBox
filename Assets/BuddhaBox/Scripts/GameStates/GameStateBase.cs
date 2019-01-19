@@ -8,10 +8,17 @@ public class GameStateBase : MonoBehaviour
 
     public bool hasFocus = false;
 
+    public bool hasNarration = false;
+    public int narrationID = 0;
    
     public virtual void GainFocus()
     {
         gm = GameManager.instance;
+
+        if (hasNarration)
+        {
+            gm.modules.Get<Narrator>().Play(narrationID);
+        }
 
         hasFocus = true;
     }

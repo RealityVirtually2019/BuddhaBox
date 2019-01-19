@@ -15,7 +15,7 @@ public class StateIntensityBase : GameStateBase
     public override void GainFocus()
     {
         base.GainFocus();
-
+        GameManager.instance.modules.Get<Player>().cam.backgroundColor = skyColor;
         StartCoroutine(IntensityRoutine());
     }
     
