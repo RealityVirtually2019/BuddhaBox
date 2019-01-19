@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.5
-  m_AmbientMode: 3
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: d11f3196f1ec951488aa7d1ff3033bf9, type: 2}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 741634528}
-  m_IndirectSpecularColor: {r: 1.4429147, g: 0.24051085, b: 0.37598702, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7214,28 +7214,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3729570774509505126, guid: 665aad9468d6ffb4d9ea5f4f904aaf8d,
-        type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3729570774509505126, guid: 665aad9468d6ffb4d9ea5f4f904aaf8d,
-        type: 3}
-      propertyPath: m_AllowMSAA
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3729570774509505126, guid: 665aad9468d6ffb4d9ea5f4f904aaf8d,
-        type: 3}
-      propertyPath: m_BackGroundColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6267231364286728399, guid: 665aad9468d6ffb4d9ea5f4f904aaf8d,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 433340716}
-    m_RemovedComponents:
-    - {fileID: 3729570774509505120, guid: 665aad9468d6ffb4d9ea5f4f904aaf8d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 665aad9468d6ffb4d9ea5f4f904aaf8d, type: 3}
 --- !u!4 &4852752114595201834 stripped
 Transform:
@@ -7440,21 +7419,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sky
       objectReference: {fileID: 0}
-    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6193240795539732413, guid: 9e7459bc496c6f843a1318425ceefca9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7510,11 +7474,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7169521946809922785, guid: 9e7459bc496c6f843a1318425ceefca9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 833285787542755712, guid: 9e7459bc496c6f843a1318425ceefca9,
         type: 3}
       propertyPath: targetColor.r
@@ -7534,6 +7493,31 @@ PrefabInstance:
         type: 3}
       propertyPath: targetColor.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 833285787542755712, guid: 9e7459bc496c6f843a1318425ceefca9,
+        type: 3}
+      propertyPath: skybox
+      value: 
+      objectReference: {fileID: 2100000, guid: d11f3196f1ec951488aa7d1ff3033bf9, type: 2}
+    - target: {fileID: 7169521946809922785, guid: 9e7459bc496c6f843a1318425ceefca9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7459bc496c6f843a1318425ceefca9, type: 3}
