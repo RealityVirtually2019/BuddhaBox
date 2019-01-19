@@ -18,15 +18,16 @@ public class Sky : ModuleBase
     {
         changeClock = 0;
         targetColor = color;
-        lastColor = skybox.GetColor("_SkyTint");
+        lastColor = RenderSettings.ambientLight;// skybox.GetColor("_SkyTint");
        // skybox.SetColor("_SkyTint", color);
        // skybox.SetColor("_GroundColor", color);
     }
 
     public void ForceColor(Color color)
     {
-        skybox.SetColor("_SkyTint", color);
-        skybox.SetColor("_GroundColor", color);
+      //  skybox.SetColor("_SkyTint", color);
+       // skybox.SetColor("_GroundColor", color);
+        RenderSettings.ambientLight = color;
         sun.color = color;
 
         changeClock = 1;
@@ -36,10 +37,11 @@ public class Sky : ModuleBase
     {
        if(changeClock < 1)
         {
-            skybox.SetColor("_SkyTint", Color.Lerp(lastColor, targetColor, changeClock));
-            skybox.SetColor("_GroundColor", Color.Lerp(lastColor, targetColor, changeClock));
+          //  skybox.SetColor("_SkyTint", Color.Lerp(lastColor, targetColor, changeClock));
+          //  skybox.SetColor("_GroundColor", Color.Lerp(lastColor, targetColor, changeClock));
             sun.color = Color.Lerp(lastColor, targetColor, changeClock);
             RenderSettings.fogColor = Color.Lerp(lastColor, targetColor, changeClock);
+            RenderSettings.ambientLight = Color.Lerp(lastColor, targetColor, changeClock);
 
 
             changeClock += Time.deltaTime / changeDuration;

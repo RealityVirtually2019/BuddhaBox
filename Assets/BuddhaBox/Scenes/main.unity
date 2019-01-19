@@ -14,19 +14,19 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.5
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: d884c788591649a49913b0506e408ef6, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d11f3196f1ec951488aa7d1ff3033bf9, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -51,7 +51,7 @@ LightmapSettings:
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 10
@@ -6070,6 +6070,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clouds
       objectReference: {fileID: 0}
+    - target: {fileID: 2655309726766597900, guid: e0de63774efa5154face1cc713a7a274,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8888948046922286262, guid: e0de63774efa5154face1cc713a7a274,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6970,6 +6975,26 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 72
       objectReference: {fileID: 0}
+    - target: {fileID: 7230255835526643709, guid: e0de63774efa5154face1cc713a7a274,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 73
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633546592456893144, guid: e0de63774efa5154face1cc713a7a274,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 74
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411149431123440531, guid: e0de63774efa5154face1cc713a7a274,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 45218145205702371, guid: e0de63774efa5154face1cc713a7a274,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 76
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0de63774efa5154face1cc713a7a274, type: 3}
 --- !u!114 &2225027609500129064 stripped
@@ -7192,7 +7217,7 @@ PrefabInstance:
     - target: {fileID: 3729570774509505126, guid: 665aad9468d6ffb4d9ea5f4f904aaf8d,
         type: 3}
       propertyPath: m_ClearFlags
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3729570774509505126, guid: 665aad9468d6ffb4d9ea5f4f904aaf8d,
         type: 3}
@@ -7410,15 +7435,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1132141800}
     m_Modifications:
-    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
+    - target: {fileID: 8829701084694143618, guid: 9e7459bc496c6f843a1318425ceefca9,
         type: 3}
-      propertyPath: m_Lightmapping
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_Name
+      value: Sky
       objectReference: {fileID: 0}
     - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
         type: 3}
@@ -7428,22 +7448,12 @@ PrefabInstance:
     - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7169521946809922785, guid: 9e7459bc496c6f843a1318425ceefca9,
-        type: 3}
-      propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829701084694143618, guid: 9e7459bc496c6f843a1318425ceefca9,
-        type: 3}
-      propertyPath: m_Name
-      value: Sky
       objectReference: {fileID: 0}
     - target: {fileID: 6193240795539732413, guid: 9e7459bc496c6f843a1318425ceefca9,
         type: 3}
@@ -7500,16 +7510,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7169521946809922785, guid: 9e7459bc496c6f843a1318425ceefca9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 833285787542755712, guid: 9e7459bc496c6f843a1318425ceefca9,
         type: 3}
-      propertyPath: skybox
-      value: 
-      objectReference: {fileID: 2100000, guid: d884c788591649a49913b0506e408ef6, type: 2}
+      propertyPath: targetColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 833285787542755712, guid: 9e7459bc496c6f843a1318425ceefca9,
         type: 3}
-      propertyPath: sun
-      value: 
-      objectReference: {fileID: 741634528}
+      propertyPath: targetColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 833285787542755712, guid: 9e7459bc496c6f843a1318425ceefca9,
+        type: 3}
+      propertyPath: targetColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 833285787542755712, guid: 9e7459bc496c6f843a1318425ceefca9,
+        type: 3}
+      propertyPath: targetColor.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7459bc496c6f843a1318425ceefca9, type: 3}
 --- !u!1001 &6697630842353992860
@@ -7608,6 +7633,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Earth
       objectReference: {fileID: 0}
+    - target: {fileID: 1555731578544020615, guid: a201c65006a8c194dafbc75cdf9768cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6479666118509400682, guid: a201c65006a8c194dafbc75cdf9768cb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7662,6 +7692,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269330357287129237, guid: a201c65006a8c194dafbc75cdf9768cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2152755966020506439, guid: a201c65006a8c194dafbc75cdf9768cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269330357285195351, guid: a201c65006a8c194dafbc75cdf9768cb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a201c65006a8c194dafbc75cdf9768cb, type: 3}
