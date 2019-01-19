@@ -11,6 +11,11 @@ public class InputHandler : ModuleBase
          gm = GameManager.instance;
     }
 
+
+    private int CheckBreathingRate()
+    {
+        return 0;
+    }
     
     public override void DoUpdate()
     {
