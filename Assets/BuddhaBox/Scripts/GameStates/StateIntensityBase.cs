@@ -16,7 +16,7 @@ public class StateIntensityBase : GameStateBase
     {
         base.GainFocus();
         GameManager.instance.modules.Get<Sky>().ChangeColor(skyColor);
-        StartCoroutine(IntensityRoutine());
+       // StartCoroutine(IntensityRoutine());
     }
     
     IEnumerator IntensityRoutine()
