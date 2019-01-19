@@ -2,17 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateFinishing : MonoBehaviour
+public class StateFinishing : GameStateBase
 {
-    // Start is called before the first frame update
-    void Start()
+    public TMPro.TextMeshProUGUI text;
+
+    float runClock = 0;
+
+    public override void GainFocus()
     {
-        
+        base.GainFocus();
+        StartCoroutine(IntroRoutine());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator IntroRoutine()
     {
-        
+        runClock = 0;
+        text.gameObject.SetActive(true);
+        while (runClock < gm.settings.finishingDuration)
+        {
+            runClock += Time.deltaTime;
+            text.text = "Finishing: " + (gm.settings.finishingDuration - runClock);
+            yield return new WaitForEndOfFrame();
+        }
+        text.gameObject.SetActive(false);
+        gm.SetCurrentState(gm.introduction);
     }
+
+
 }

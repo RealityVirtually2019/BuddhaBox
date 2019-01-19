@@ -8,13 +8,11 @@ public class GameStateBase : MonoBehaviour
 
     public bool hasFocus = false;
 
-    public void Awake()
-    {
-        gm = GameManager.instance;
-    }
-
+   
     public virtual void GainFocus()
     {
+        gm = GameManager.instance;
+
         hasFocus = true;
     }
 

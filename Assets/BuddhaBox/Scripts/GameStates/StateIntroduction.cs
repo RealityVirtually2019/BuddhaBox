@@ -8,6 +8,8 @@ public class StateIntroduction : GameStateBase
 
     float runClock = 0;
 
+    public Transform startPosition;
+
     public override void GainFocus()
     {
         base.GainFocus();
@@ -16,6 +18,7 @@ public class StateIntroduction : GameStateBase
 
     IEnumerator IntroRoutine()
     {
+        gm.player.transform.position = startPosition.position;
         runClock = 0;
         text.gameObject.SetActive(true);
         while(runClock < gm.settings.introductionDuration)
