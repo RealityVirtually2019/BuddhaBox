@@ -41,7 +41,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.8421261, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -113,9 +113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a7e7685d8d6484997ceca84af4fe18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skybox: {fileID: 0}
+  skybox: {fileID: 2100000, guid: d1385980456cd2044b282d73625457db, type: 2}
   targetColor: {r: 0, g: 0, b: 0, a: 0}
   lastColor: {r: 0, g: 0, b: 0, a: 0}
   changeDuration: 2
   changeClock: 0
-  sun: {fileID: 0}
+  sun: {fileID: 2128075271859917187}
