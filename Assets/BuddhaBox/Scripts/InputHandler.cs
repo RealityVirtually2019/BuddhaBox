@@ -10,6 +10,8 @@ public class InputHandler : ModuleBase
 
     private BreathDetector breathDetector;
 
+    public float playTimeClock = 0;
+
     private void Start()
     {
         gm = GameManager.instance;
@@ -25,43 +27,57 @@ public class InputHandler : ModuleBase
 
     public override void DoUpdate()
     {
-        if (gm.currentState != gm.introduction && gm.currentState != gm.finishing)
+        if(gm.currentState == gm.finishing)
+        {
+            return;
+        }
+        if (gm.currentState != gm.introduction)
         {
             intensityClock += Time.deltaTime;
             decisionClock += Time.deltaTime;
-
+            playTimeClock += Time.deltaTime;
         }
+       
 
         switch (gm.settings.mode)
         {
             case Settings.MODE.AUTO_PLAY:
-              
-                    if (intensityClock > gm.settings.SecondsBetweenStatesInAutoplay)
+                if (playTimeClock >= gm.settings.TotalSecondsBeforeFinishingExperience)
+                {
+                    gm.SetCurrentState(gm.finishing);
+                    return;
+                }
+                if (intensityClock > gm.settings.SecondsBetweenStatesInAutoplay)
                     {
                         intensityClock = 0;
                         gm.SetCurrentState((gm.currentState as StateIntensityBase).nextState);
                     }
                 break;
             case Settings.MODE.BREATH_DETECTION:
+                if (playTimeClock >= gm.settings.TotalSecondsBeforeFinishingExperience)
+                {
+                    gm.SetCurrentState(gm.finishing);
+                    return;
+                }
                 if (decisionClock > gm.settings.SecondsBetweenRecheckingBreathsPerMinute)
                 {
-                    float bpm = breathDetector.GetBPM();
-                    Debug.Log("Making mood decision based on breath per minute: " + bpm);
+                    float secondsPerBreath = breathDetector.GetSecondsBetweenBreaths();
+                    Debug.Log("Making mood decision based on seconds per breath: " + secondsPerBreath);
                     decisionClock = 0;
 
-                    if (bpm > gm.settings.BreathsPerMinuteForIntensity1)
+                    if (secondsPerBreath > gm.settings.SecondsPerBreathForIntensity3)
                     {
-                        gm.SetCurrentState(gm.intenstity1);
+                        gm.SetCurrentState(gm.intenstity3);
 
                     }
-                    else if (bpm > gm.settings.BreathsPerMinuteForIntensity2)
+                    else if (secondsPerBreath > gm.settings.SecondsPerBreathForIntensity2)
                     {
                         gm.SetCurrentState(gm.intenstity2);
 
                     }
                     else
                     {
-                        gm.SetCurrentState(gm.intenstity3);
+                        gm.SetCurrentState(gm.intenstity1);
 
                     }
                 }
