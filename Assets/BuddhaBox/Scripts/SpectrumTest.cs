@@ -53,16 +53,14 @@ public class SpectrumTest : MonoBehaviour
 
     public float RmsValue;
     public float DbValue;
-    public float PitchValue;
 
     void Start()
     {
-        RestartMicrophone();
-        //numSamples = Mathf.ClosestPowerOfTwo(numSamples);
+        //RestartMicrophone();
         numSamples = 1024;
 
         spectrum = new float[numSamples];
-        Debug.Log(Time.fixedDeltaTime);
+        //Debug.Log(Time.fixedDeltaTime);
     }
 
     /// <summary>
@@ -131,7 +129,7 @@ public class SpectrumTest : MonoBehaviour
         {
             t = 0;
             ++j;
-            Debug.Log("time:" + j + " max:" + lm + " min:" + lmin);
+            //Debug.Log("time:" + j + " max:" + lm + " min:" + lmin);
             lm = -100;
             lmin = 100;
         }
