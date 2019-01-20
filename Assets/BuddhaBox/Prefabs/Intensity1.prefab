@@ -28587,7 +28587,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasFocus: 0
   hasNarration: 1
-  narrationID: 1
+  narrationID: 2
   clouds: {fileID: 0}
   skyColor: {r: 0.8679245, g: 0.118725546, b: 0.118725546, a: 0}
   nextState: {fileID: 0}
+  cloudMaterial1: {fileID: 2100000, guid: 583cb594b75e77e4090e4d5373a8dbbb, type: 2}
+  clouds1:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  lightningParticles:
+  - {fileID: 3027522913246578927}
+  - {fileID: 1545119478}
+  - {fileID: 1835544464}
+  - {fileID: 1729474330}
+  - {fileID: 689790889}
+  - {fileID: 1535576632}
