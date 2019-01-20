@@ -21,11 +21,12 @@ public class StateFinishing : GameStateBase
         while (runClock < gm.settings.finishingDuration)
         {
             runClock += Time.deltaTime;
-            text.text = "Finishing: " + (gm.settings.finishingDuration - runClock);
+           // text.text = "Finishing: " + (gm.settings.finishingDuration - runClock);
             yield return new WaitForEndOfFrame();
         }
         text.gameObject.SetActive(false);
-        gm.SetCurrentState(gm.introduction);
+        Application.Quit();
+      //  gm.SetCurrentState(gm.introduction);
     }
 
 
