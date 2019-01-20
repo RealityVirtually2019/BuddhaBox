@@ -4,29 +4,36 @@ using UnityEngine;
 
 public class StateIntensity1 : StateIntensityBase
 {
-    //activate lightning
 
-    void GameFocus()
+    //activate lightning
+    public Material cloudMaterial1;
+
+    public GameObject[] clouds1;
+
+    public GameObject[] lightningParticles;
+
+    public override void GainFocus()
     {
-        //play lightning particles
-        GameObject.Find("Ligtning").SetActive(true);
-        GameObject.Find("Ligtning (1)").SetActive(true);
-        GameObject.Find("Ligtning (2)").SetActive(true);
-        GameObject.Find("Ligtning (3)").SetActive(true);
-        GameObject.Find("Ligtning (4)").SetActive(true);
-        GameObject.Find("Ligtning (5)").SetActive(true);
+  
+
+        //activate lightning particles
+        for (int i = 0; i < 6; i++)
+        {
+           lightningParticles[i].SetActive(true);
+           clouds1[i].GetComponent<ParticleSystemRenderer>().material = cloudMaterial1;
+
+        }
+        base.GainFocus();
 
     }
 
-    void LoseFocus()
+    public override void LoseFocus()
     {
-        //disable lightning particles
-        GameObject.Find("Ligtning").SetActive(false);
-        GameObject.Find("Ligtning (1)").SetActive(false);
-        GameObject.Find("Ligtning (2)").SetActive(false);
-        GameObject.Find("Ligtning (3)").SetActive(false);
-        GameObject.Find("Ligtning (4)").SetActive(false);
-        GameObject.Find("Ligtning (5)").SetActive(false);
+ 
+        for (int i = 0; i < 6; i++)
+        {
+            lightningParticles[i].SetActive(false);
+        }
 
     }
 
