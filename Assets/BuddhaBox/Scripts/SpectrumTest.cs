@@ -57,7 +57,7 @@ public class SpectrumTest : MonoBehaviour
 
     void Start()
     {
-        //RestartMicrophone();
+        RestartMicrophone();
         //numSamples = Mathf.ClosestPowerOfTwo(numSamples);
         numSamples = 1024;
 
