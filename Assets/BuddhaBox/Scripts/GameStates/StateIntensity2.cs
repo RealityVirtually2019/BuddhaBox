@@ -5,28 +5,29 @@ using UnityEngine;
 public class StateIntensity2 : StateIntensityBase
 {
     //activate rain
+    public GameObject[] rainParticles;
+    public GameObject[] clouds2;
+    public Material cloudMaterial2;
 
-    void GameFocus()
+    public override void GainFocus()
     {
         //play lightning particles
-        GameObject.Find("Shower").SetActive(true);
-        GameObject.Find("Shower (1)").SetActive(true);
-        GameObject.Find("Shower (2)").SetActive(true);
-        GameObject.Find("Shower (3)").SetActive(true);
-        GameObject.Find("Shower (4)").SetActive(true);
-        GameObject.Find("Shower (5)").SetActive(true);
+        for (int i = 0; i < 6; i++)
+        {
+            rainParticles[i].SetActive(true);
+            clouds2[i].GetComponent<ParticleSystemRenderer>().material = cloudMaterial2;
+        }
+        base.GainFocus();
 
     }
 
-    void LoseFocus()
+    public override void LoseFocus()
     {
         //disable lightning particles
-        GameObject.Find("Shower").SetActive(false);
-        GameObject.Find("Shower (1)").SetActive(false);
-        GameObject.Find("Shower (2)").SetActive(false);
-        GameObject.Find("Shower (3)").SetActive(false);
-        GameObject.Find("Shower (4)").SetActive(false);
-        GameObject.Find("Shower (5)").SetActive(false);
+        for (int i = 0; i < 6; i++)
+        {
+            rainParticles[i].SetActive(false);
+        }
 
     }
 
