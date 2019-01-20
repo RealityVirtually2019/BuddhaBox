@@ -1988,7 +1988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &550137677
 Transform:
   m_ObjectHideFlags: 0
@@ -5311,7 +5311,7 @@ PrefabInstance:
     - target: {fileID: 2655309726766597900, guid: e0de63774efa5154face1cc713a7a274,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8888948046922286262, guid: e0de63774efa5154face1cc713a7a274,
         type: 3}
@@ -6233,6 +6233,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 76
       objectReference: {fileID: 0}
+    - target: {fileID: 2121518162, guid: e0de63774efa5154face1cc713a7a274, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0de63774efa5154face1cc713a7a274, type: 3}
 --- !u!114 &2225027609500129064 stripped
@@ -6885,6 +6889,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sky
       objectReference: {fileID: 0}
+    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6193240795539732413, guid: 9e7459bc496c6f843a1318425ceefca9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6970,21 +6989,6 @@ PrefabInstance:
       propertyPath: skybox
       value: 
       objectReference: {fileID: 2100000, guid: d11f3196f1ec951488aa7d1ff3033bf9, type: 2}
-    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2128075271859917187, guid: 9e7459bc496c6f843a1318425ceefca9,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e7459bc496c6f843a1318425ceefca9, type: 3}
 --- !u!1001 &6697630842353992860
@@ -7157,6 +7161,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779420555458983827, guid: a201c65006a8c194dafbc75cdf9768cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269330357287129239, guid: a201c65006a8c194dafbc75cdf9768cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a201c65006a8c194dafbc75cdf9768cb, type: 3}
