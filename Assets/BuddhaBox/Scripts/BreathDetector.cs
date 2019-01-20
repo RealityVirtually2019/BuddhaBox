@@ -64,10 +64,8 @@ public class BreathDetector : ModuleBase
     public enum BREATH_STATE { UNKNOWN, BREATHING, NOT_BREATHING }
     public BREATH_STATE breathState = BREATH_STATE.UNKNOWN;
 
-    public enum BREATH_METSASTATE { RED, YELLO, BLUE }
-    public BREATH_METSASTATE breathMetaState = BREATH_METSASTATE.RED;
-
     public Queue<float> decibleHistory = new Queue<float>();
+    public List <float> decibleHistory_qq;
     public float historyMax = 50;
     float average = 0;
 
@@ -85,7 +83,6 @@ public class BreathDetector : ModuleBase
         numSamples = 1024;
 
         spectrum = new float[numSamples];
-        //Debug.Log(Time.fixedDeltaTime);
     }
 
     /// <summary>
@@ -135,10 +132,14 @@ public class BreathDetector : ModuleBase
         CalculateBPM();
     }
 
-
     void CalculateBPM()
     {
         decibleHistory.Enqueue(DbValue);
+        if (DbValue > -160)
+        {
+            decibleHistory_qq.Add(DbValue);
+        }
+
         average = decibleHistory.Sum() / decibleHistory.Count();
 
         while (decibleHistory.Count() > historyMax)
@@ -186,5 +187,19 @@ public class BreathDetector : ModuleBase
         averageBreathPeriod = breathPeriodHistory.Sum() / breathPeriodHistory.Count();
     }
 
+    public void Find_quiet_level()
+    {
+        float line = -100;
+        int perc = 3;
+        decibleHistory_qq.Sort();
+        int len = 0;
+        foreach (float i in decibleHistory_qq) { ++len; }
+        int len2 = len / perc;
 
+        List<float> list2 = decibleHistory_qq.GetRange(0,len2);
+        line = list2.Average();
+
+        decibleHistory_qq.Clear();
+        //dbForNotBreathing = line;
+    }
 }
