@@ -158,7 +158,7 @@ public class BreathDetector : ModuleBase
                         BreathHappened();
                     } else
                     {
-                        Debug.Log("Breath too short");
+                        //Debug.Log("Breath too short");
                     }
                     isBreathingTimer = 0;
                     breathState = BREATH_STATE.NOT_BREATHING;

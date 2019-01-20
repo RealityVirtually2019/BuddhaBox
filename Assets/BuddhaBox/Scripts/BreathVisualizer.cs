@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BreathVisualizer : ModuleBase
@@ -22,7 +21,7 @@ public class BreathVisualizer : ModuleBase
     {
         detector = GameManager.instance.modules.Get<BreathDetector>();
         emission = particles.emission;
-      //  StartCoroutine(DelayedParticleDeactivate());
+        //  StartCoroutine(DelayedParticleDeactivate());
     }
 
     IEnumerator DelayedParticleDeactivate()
@@ -30,12 +29,13 @@ public class BreathVisualizer : ModuleBase
         while (true)
         {
             yield return new WaitForSeconds(4);
-            if(detector.breathState != BreathDetector.BREATH_STATE.BREATHING){
+            if (detector.breathState != BreathDetector.BREATH_STATE.BREATHING)
+            {
                 particles.gameObject.SetActive(false);
                 yield return new WaitForEndOfFrame();
                 particles.gameObject.SetActive(true);
             }
-         
+
 
 
         }
@@ -46,23 +46,25 @@ public class BreathVisualizer : ModuleBase
     public float lightDamp = 1;
     public override void DoUpdate()
     {
-        if(!GameManager.instance.modules.Get<Narrator>().IsPlaying()){
-        switch (detector.breathState)
+        //   if (!GameManager.instance.modules.Get<Narrator>().IsPlaying())
+        if (!GameManager.instance.currentState != GameManager.instance.introduction)
         {
-            case BreathDetector.BREATH_STATE.BREATHING:
-                targetLight = maxLightIntensity;
-              //  emission.rateOverTime = particleEmissionWhenBreathing;
-                text.text = "Breathing:\n"+detector.DbValue;
-               // particles.gameObject.SetActive(true);
+            switch (detector.breathState)
+            {
+                case BreathDetector.BREATH_STATE.BREATHING:
+                    targetLight = maxLightIntensity;
+                    //  emission.rateOverTime = particleEmissionWhenBreathing;
+                    text.text = "Breathing:\n" + detector.DbValue;
+                    // particles.gameObject.SetActive(true);
 
-                break;
-            case BreathDetector.BREATH_STATE.NOT_BREATHING:
-              // emission.rateOverTime = 0;
-               targetLight = 0;
+                    break;
+                case BreathDetector.BREATH_STATE.NOT_BREATHING:
+                    // emission.rateOverTime = 0;
+                    targetLight = 0;
 
-                text.text = "Not breathing: " + detector.DbValue;
-                break;
-        }
+                    text.text = "Not breathing: " + detector.DbValue;
+                    break;
+            }
         }
         light.intensity = Mathf.SmoothDamp(light.intensity, targetLight, ref lightVelocity, lightDamp);
     }

@@ -2301,6 +2301,11 @@ PrefabInstance:
       propertyPath: mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8446580386494807752, guid: 0528775f5dda26d4195f929b4452b95f,
+        type: 3}
+      propertyPath: TotalSecondsBeforeFinishingExperience
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0528775f5dda26d4195f929b4452b95f, type: 3}
 --- !u!4 &8888948046922286262 stripped
@@ -2379,7 +2384,7 @@ PrefabInstance:
     - target: {fileID: 9132700658118104776, guid: b53d55214fd45964987fd4c9c7ea3997,
         type: 3}
       propertyPath: maxLightIntensity
-      value: 0.5
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b53d55214fd45964987fd4c9c7ea3997, type: 3}

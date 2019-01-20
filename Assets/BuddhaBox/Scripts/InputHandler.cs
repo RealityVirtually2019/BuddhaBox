@@ -27,7 +27,9 @@ public class InputHandler : ModuleBase
 
     public override void DoUpdate()
     {
-        if(gm.currentState == gm.finishing)
+        playTimeClock += Time.deltaTime;
+
+        if (gm.currentState == gm.finishing)
         {
             return;
         }
@@ -35,7 +37,6 @@ public class InputHandler : ModuleBase
         {
             intensityClock += Time.deltaTime;
             decisionClock += Time.deltaTime;
-            playTimeClock += Time.deltaTime;
         }
        
 

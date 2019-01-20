@@ -26,6 +26,7 @@ public class StateFinishing : GameStateBase
         }
         text.gameObject.SetActive(false);
         Application.Quit();
+        Debug.Log("quit!");
       //  gm.SetCurrentState(gm.introduction);
     }
 
