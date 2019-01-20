@@ -18,6 +18,8 @@ public class StateIntroduction : GameStateBase
 
     IEnumerator IntroRoutine()
     {
+        GameManager.instance.modules.Get<Sky>().ForceColor(Color.black);
+
         gm.player.transform.position = startPosition.position;
         runClock = 0;
         text.gameObject.SetActive(true);

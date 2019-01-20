@@ -46,18 +46,21 @@ public class SpectrumTest : MonoBehaviour
 
 
     #endregion
-    public float[] spectrum;
+    private float[] spectrum;
     string microphoneName;
     float lastMicRestartTime;
     float micRestartWait = 20;
 
+    public float RmsValue;
+    public float DbValue;
+
     void Start()
     {
-        RestartMicrophone();
-        numSamples = Mathf.ClosestPowerOfTwo(numSamples);
+        //RestartMicrophone();
+        numSamples = 1024;
 
-       //initialise arrays
         spectrum = new float[numSamples];
+        //Debug.Log(Time.fixedDeltaTime);
     }
 
     /// <summary>
@@ -76,27 +79,59 @@ public class SpectrumTest : MonoBehaviour
             Debug.LogError("Error from SimpleSpectrum: Microphone or Stereo Mix is being used, but no Microphones are found!");
         }
 
-        microphoneName = null; //if type is Microphone, the default microphone will be used. If StereoMix, 'Stereo Mix' will be searched for in the list.
-
+        microphoneName = null;
         audioSource.loop = true;
         audioSource.outputAudioMixerGroup = muteGroup;
-
         AudioClip clip1 = audioSource.clip = Microphone.Start(microphoneName, true, 5, 44100);
         audioSource.clip = clip1;
 
         while (!(Microphone.GetPosition(microphoneName) - 0 > 0)) { }
         audioSource.Play();
         lastMicRestartTime = Time.unscaledTime;
-        //print("restarted mic");
     }
 
+    int t = 0;
+    int j = 0;
+    float lm = -100;
+    float lmin = 100;
+    float RefValue = 0.01f;
 
-    void Update()
+    void FixedUpdate()
     {
-        audioSource.GetSpectrumData(spectrum, sampleChannel, windowUsed); //get the spectrum data
+        audioSource.GetOutputData(spectrum, sampleChannel);
+
+        int i;
+        float sum = 0;
+        for (i = 0; i < numSamples; i++)
+        {
+            sum += spectrum[i] * spectrum[i]; // sum squared samples
+        }
+        RmsValue = Mathf.Sqrt(sum / numSamples); // rms = square root of average
+        DbValue = 20 * Mathf.Log10(RmsValue / RefValue); // calculate dB
+        if (DbValue < -160) DbValue = -160; // clamp it to -160dB min
+
+        if (DbValue > lm)
+        {
+            lm = DbValue;
+        }
+        if (DbValue < lmin)
+        {
+            lmin = DbValue;
+        }
+
         if ((Time.unscaledTime - lastMicRestartTime) > micRestartWait)
         {
-            RestartMicrophone();
+            //RestartMicrophone();
+        }
+
+        ++t;
+        if (t>=25)
+        {
+            t = 0;
+            ++j;
+            //Debug.Log("time:" + j + " max:" + lm + " min:" + lmin);
+            lm = -100;
+            lmin = 100;
         }
     }
     
