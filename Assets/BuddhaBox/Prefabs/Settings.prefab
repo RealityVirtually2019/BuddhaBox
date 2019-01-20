@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2904555978400996739
+--- !u!1 &8446580386494807766
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2904555978400996738}
-  - component: {fileID: 2904555978400996740}
-  - component: {fileID: 2904555978400996741}
+  - component: {fileID: 8446580386494807753}
+  - component: {fileID: 8446580386494807752}
+  - component: {fileID: 8446580386494807755}
   m_Layer: 0
-  m_Name: Narrator
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2904555978400996738
+--- !u!4 &8446580386494807753
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2904555978400996739}
+  m_GameObject: {fileID: 8446580386494807766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,37 +32,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2904555978400996740
+--- !u!114 &8446580386494807752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2904555978400996739}
+  m_GameObject: {fileID: 8446580386494807766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd289dff2fc3c6a48a70cfc5d23bdb61, type: 3}
+  m_Script: {fileID: 11500000, guid: 539c4cc3f9fea7a428e8fd6eea8ecb50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audiosource: {fileID: 2904555978400996741}
-  clips:
-  - {fileID: 8300000, guid: 1819fece3ca2ece48a8a84367a4d41dc, type: 3}
-  - {fileID: 8300000, guid: 8ef48577d98b0264097c084bfda1287e, type: 3}
-  - {fileID: 8300000, guid: e04588cb8d8a35249a3efa3c6615a7e3, type: 3}
-  - {fileID: 8300000, guid: b3b438907bd3751409fb052ab3ba19b6, type: 3}
-  - {fileID: 8300000, guid: 7113f3adbd8a2474da4e6a446e434e13, type: 3}
---- !u!82 &2904555978400996741
+  mode: 0
+  introductionDuration: 30
+  finishingDuration: 30
+  SecondsBetweenRecheckingBreathsPerMinute: 10
+  BreathsPerMinuteForIntensity1: 30
+  BreathsPerMinuteForIntensity2: 15
+  SecondsBetweenStatesInAutoplay: 60
+--- !u!82 &8446580386494807755
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2904555978400996739}
+  m_GameObject: {fileID: 8446580386494807766}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -75,9 +75,9 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 1
-  BypassListenerEffects: 1
-  BypassReverbZones: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:

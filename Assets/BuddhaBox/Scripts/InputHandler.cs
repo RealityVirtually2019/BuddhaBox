@@ -4,14 +4,17 @@ public class InputHandler : ModuleBase
 {
     GameManager gm;
 
-    public bool autoPlay = false;
-    public float secondsPerIntensity = 5;
 
     public float intensityClock = 0;
+    public float decisionClock = 0;
+
+    private BreathDetector breathDetector;
 
     private void Start()
     {
         gm = GameManager.instance;
+        breathDetector = gm.modules.Get<BreathDetector>();
+
     }
 
 
@@ -22,19 +25,49 @@ public class InputHandler : ModuleBase
 
     public override void DoUpdate()
     {
-        if (autoPlay)
+        if (gm.currentState != gm.introduction && gm.currentState != gm.finishing)
         {
-            if (gm.currentState != gm.introduction && gm.currentState != gm.finishing)
-            {
-                intensityClock += Time.deltaTime;
+            intensityClock += Time.deltaTime;
+            decisionClock += Time.deltaTime;
 
-            }
-            if (intensityClock > secondsPerIntensity)
-            {
-                intensityClock = 0;
-                gm.SetCurrentState((gm.currentState as StateIntensityBase).nextState);
-            }
         }
+
+        switch (gm.settings.mode)
+        {
+            case Settings.MODE.AUTO_PLAY:
+              
+                    if (intensityClock > gm.settings.SecondsBetweenStatesInAutoplay)
+                    {
+                        intensityClock = 0;
+                        gm.SetCurrentState((gm.currentState as StateIntensityBase).nextState);
+                    }
+                break;
+            case Settings.MODE.BREATH_DETECTION:
+                if (decisionClock > gm.settings.SecondsBetweenRecheckingBreathsPerMinute)
+                {
+                    float bpm = breathDetector.GetBPM();
+                    Debug.Log("Making mood decision based on breath per minute: " + bpm);
+                    decisionClock = 0;
+
+                    if (bpm > gm.settings.BreathsPerMinuteForIntensity1)
+                    {
+                        gm.SetCurrentState(gm.intenstity1);
+
+                    }
+                    else if (bpm > gm.settings.BreathsPerMinuteForIntensity2)
+                    {
+                        gm.SetCurrentState(gm.intenstity2);
+
+                    }
+                    else
+                    {
+                        gm.SetCurrentState(gm.intenstity3);
+
+                    }
+                }
+                break;
+        }
+      
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             gm.SetCurrentState(gm.introduction);

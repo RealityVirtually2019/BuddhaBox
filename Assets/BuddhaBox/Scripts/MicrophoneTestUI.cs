@@ -16,7 +16,7 @@ public class MicrophoneTestUI : MonoBehaviour
     public BREATH_STATE breathState = BREATH_STATE.UNKNOWN;
 
     public Queue<float> decibleHistory = new Queue<float>();
-    public float historyMax = 20;
+    public float historyMax = 50;
     float average = 0;
     // Start is called before the first frame update
     void Start()
