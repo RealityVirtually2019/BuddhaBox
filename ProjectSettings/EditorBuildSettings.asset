@@ -7,5 +7,5 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/BuddhaBox/Scenes/main.unity
-    guid: fc03d58cb2000c642bbe76cbac225e16
+    guid: 74b84305f6c6d7445a74425bb80f1926
   m_configObjects: {}

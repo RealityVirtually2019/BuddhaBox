@@ -76,6 +76,9 @@ public class BreathDetector : ModuleBase
     public float breathPeriodHistoryQueueSize = 4;
     public float averageBreathPeriod = 0;
 
+    private float isBreathingTimer = 0;
+    public float minimumRequiredBreathTime = 0.2f;
+
     void Start()
     {
         RestartMicrophone();
@@ -147,8 +150,16 @@ public class BreathDetector : ModuleBase
         switch (breathState)
         {
             case BREATH_STATE.BREATHING:
+                isBreathingTimer += Time.deltaTime;
                 if (average < dbForNotBreathing)
                 {
+                    if(isBreathingTimer > minimumRequiredBreathTime){
+                        BreathHappened();
+                    } else
+                    {
+                        Debug.Log("Breath too short");
+                    }
+                    isBreathingTimer = 0;
                     breathState = BREATH_STATE.NOT_BREATHING;
                 }
                 break;
@@ -157,7 +168,6 @@ public class BreathDetector : ModuleBase
             case BREATH_STATE.NOT_BREATHING:
                 if (average > dbForBreathing)
                 {
-                    BreathHappened();
                     breathState = BREATH_STATE.BREATHING;
                 }
                 break;
