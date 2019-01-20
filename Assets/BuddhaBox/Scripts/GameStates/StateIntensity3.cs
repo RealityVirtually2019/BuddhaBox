@@ -6,8 +6,8 @@ public class StateIntensity3 : StateIntensityBase
 {
     //activate rain
     public GameObject[] softClouds;
-    public GameObject[] hardClouds;
     bool isFocused;
+    public GameObject elephantCloud;
     float counter;
     void Start()
     {
@@ -22,9 +22,11 @@ public class StateIntensity3 : StateIntensityBase
             counter += Time.deltaTime;
            
         }
-        if (counter > 4.0f)
+        if (counter > 60.0f)
         {
-            Debug.Log("It has been 4 seconds");
+            Debug.Log("It has been 1 min");
+            //play elephant animation
+            elephantCloud.SetActive(true);
         }
     }
 
@@ -34,7 +36,6 @@ public class StateIntensity3 : StateIntensityBase
         for (int i = 0; i < 6; i++)
         {
             isFocused = true;
-            //hardClouds[i].SetActive(false);
             softClouds[i].SetActive(true);
         }
         base.GainFocus();
@@ -48,7 +49,6 @@ public class StateIntensity3 : StateIntensityBase
         isFocused = false;
         for (int i = 0; i < 6; i++)
         {
-           // hardClouds[i].SetActive(true);
 
             softClouds[i].SetActive(false);
         }

@@ -28504,7 +28504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520392876323446071}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.89, y: -0.27999997, z: 0.15}
+  m_LocalPosition: {x: -13.2, y: -0.27999997, z: 0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6170180073656281459}
@@ -42656,7 +42656,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3738305592934385218}
   m_LocalRotation: {x: -0, y: -0.30363095, z: -0, w: 0.9527897}
-  m_LocalPosition: {x: 11.02, y: -0.96, z: -1.96}
+  m_LocalPosition: {x: 14.22, y: -0.96, z: -1.96}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 6170180073656281459}
@@ -52082,7 +52082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasFocus: 0
-  hasNarration: 1
+  hasNarration: 0
   narrationID: 2
   clouds: {fileID: 0}
   skyColor: {r: 0.8679245, g: 0.118725546, b: 0.118725546, a: 0}
