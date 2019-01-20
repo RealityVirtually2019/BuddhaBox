@@ -1718,10 +1718,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 190696819619990063, guid: 1f81d1fdd2b98524aaf4481a6b48fe75,
+    - target: {fileID: 4111014297446877219, guid: 1f81d1fdd2b98524aaf4481a6b48fe75,
         type: 3}
-      propertyPath: dbForBreathing
-      value: 8
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 433340716}
+    - target: {fileID: 6474446679602052920, guid: 1f81d1fdd2b98524aaf4481a6b48fe75,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474446679602052920, guid: 1f81d1fdd2b98524aaf4481a6b48fe75,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f81d1fdd2b98524aaf4481a6b48fe75, type: 3}
