@@ -415,7 +415,7 @@ namespace GoogleVR.Demos
             {
                 return;
             }
-
+            /*
             controllerPointers[activeControllerPointer].SetActive(active);
 
             // Update the pointer type only if this is currently activated.
@@ -430,6 +430,7 @@ namespace GoogleVR.Demos
             {
                 GvrPointerInputModule.Pointer = pointer;
             }
+            */
         }
     }
 }
