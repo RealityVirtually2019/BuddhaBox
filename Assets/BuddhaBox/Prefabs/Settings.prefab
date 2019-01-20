@@ -45,12 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
-  introductionDuration: 30
+  introductionDuration: 3
   finishingDuration: 30
   SecondsBetweenRecheckingBreathsPerMinute: 10
-  BreathsPerMinuteForIntensity1: 30
-  BreathsPerMinuteForIntensity2: 15
+  SecondsPerBreathForIntensity2: 2
+  SecondsPerBreathForIntensity3: 4
   SecondsBetweenStatesInAutoplay: 60
+  TotalSecondsBeforeFinishingExperience: 240
 --- !u!82 &8446580386494807755
 AudioSource:
   m_ObjectHideFlags: 0
