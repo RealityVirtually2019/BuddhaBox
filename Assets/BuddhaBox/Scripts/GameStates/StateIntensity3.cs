@@ -48,7 +48,7 @@ public class StateIntensity3 : StateIntensityBase
         isFocused = false;
         for (int i = 0; i < 6; i++)
         {
-            hardClouds[i].SetActive(true);
+            hardClouds[i].SetActive(false);
 
             softClouds[i].SetActive(false);
         }

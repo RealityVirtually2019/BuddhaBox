@@ -6,7 +6,6 @@ public class StateIntensity1 : StateIntensityBase
 {
 
     //activate lightning
-    public Material cloudMaterial1;
 
     public GameObject[] clouds1;
 
@@ -20,7 +19,7 @@ public class StateIntensity1 : StateIntensityBase
         for (int i = 0; i < 6; i++)
         {
            lightningParticles[i].SetActive(true);
-           clouds1[i].GetComponent<ParticleSystemRenderer>().material = cloudMaterial1;
+            clouds1[i].SetActive(true);
 
         }
         base.GainFocus();
@@ -33,6 +32,8 @@ public class StateIntensity1 : StateIntensityBase
         for (int i = 0; i < 6; i++)
         {
             lightningParticles[i].SetActive(false);
+            clouds1[i].SetActive(false);
+
         }
 
     }

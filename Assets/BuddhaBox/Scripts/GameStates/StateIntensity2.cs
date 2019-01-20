@@ -7,7 +7,6 @@ public class StateIntensity2 : StateIntensityBase
     //activate rain
     public GameObject[] rainParticles;
     public GameObject[] clouds2;
-    public Material cloudMaterial2;
 
     public override void GainFocus()
     {
@@ -15,7 +14,8 @@ public class StateIntensity2 : StateIntensityBase
         for (int i = 0; i < 6; i++)
         {
             rainParticles[i].SetActive(true);
-            clouds2[i].GetComponent<ParticleSystemRenderer>().material = cloudMaterial2;
+
+            clouds2[i].SetActive(true);
         }
         base.GainFocus();
 
@@ -27,6 +27,8 @@ public class StateIntensity2 : StateIntensityBase
         for (int i = 0; i < 6; i++)
         {
             rainParticles[i].SetActive(false);
+            clouds2[i].SetActive(false);
+
         }
 
     }
