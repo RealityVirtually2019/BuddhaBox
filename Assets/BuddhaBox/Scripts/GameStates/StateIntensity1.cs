@@ -13,12 +13,14 @@ public class StateIntensity1 : StateIntensityBase
 
     public override void GainFocus()
     {
-  
+        //show clouds
 
         //activate lightning particles
         for (int i = 0; i < 6; i++)
         {
            lightningParticles[i].SetActive(true);
+
+            //show clouds
             clouds1[i].SetActive(true);
 
         }
